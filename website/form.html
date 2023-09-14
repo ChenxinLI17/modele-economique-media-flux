@@ -1,0 +1,301 @@
+<!-- form.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Démonstration</title>
+
+    <!-- BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <!-- GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CUSTOM-->
+    <style>
+        * {
+            font-family: 'Poppins'
+        }
+
+        .bg-purple {
+            background-color: #241623 !important
+        }
+
+        .bg-orange {
+            background-color: #D56F3E !important
+        }
+
+        .bg-blue {
+            background-color: #3C787E !important
+        }
+
+        .bg-beige {
+            background-color: #D0CD94 !important
+        }
+
+        .bg-green {
+            background-color: #C7EF00 !important
+        }
+
+        .bg-purple>*,
+        .bg-blue>*,
+        .bg-orange>* {
+            color: white !important
+        }
+
+        .purple {
+            color: #241623 !important
+        }
+
+        .orange {
+            color: #D56F3E !important
+        }
+
+        .blue {
+            color: #3C787E !important
+        }
+
+        .beige {
+            color: #D0CD94 !important
+        }
+
+        .green {
+            color: #C7EF00 !important
+        }
+
+        button.bg-purple,
+        button.bg-orange,
+        button.bg-blue,
+        button.bg-beige,
+        button.bg-green {
+            border: none
+        }
+
+        button.bg-purple:hover {
+            background-color: #4a2e48 !important
+        }
+
+        button.bg-orange:hover {
+            background-color: #e27643 !important
+        }
+
+        button.bg-blue:hover {
+            background-color: #468d93 !important
+        }
+
+        button.bg-beige:hover {
+            background-color: #e1dea0 !important
+        }
+
+        button.bg-green:hover {
+            background-color: #d4ff00 !important
+        }
+
+        button.bg-purple:active {
+            background-color: #130b12 !important
+        }
+
+        button.bg-orange:active {
+            background-color: #a6542e !important
+        }
+
+        button.bg-blue:active {
+            background-color: #2e5b5f !important
+        }
+
+        button.bg-beige:active {
+            background-color: #9f9d71 !important
+        }
+
+        button.bg-green:active {
+            background-color: #a4c500 !important
+        }
+
+        b {
+            font-weight: 700;
+        }
+    </style>
+
+    <script>
+        function validation() {
+            var errors = [];
+
+            // Récupérez les paramètres de base
+            var n = document.getElementById("n").value;
+            var m = document.getElementById("m").value;
+            var t = document.getElementById("t").value;
+
+            if (n < 1) {
+                errors.push("Le nombre de viewers doit être supérieur à 1");
+            }
+
+            if (m < 1 || m > 5) {
+                errors.push("Le nombre de platforms être compris entre 1 et 5");
+            }
+
+            if (t < 1) {
+                errors.push("La période de temps doit être supérieure à 0");
+            }
+
+            // Vérifier que la somme des pourcentages des stratégies viewers est égale à 100
+            var viewerStrategies = document.getElementsByName("viewerStrategy[]");
+            if (platformStrategies.length > 0) {
+                var somme = 0;
+                for (var i = 0; i < viewerStrategies.length; i++) {
+                    somme += parseInt(viewerStrategies[i].value);
+                }
+
+                if (somme >= n) {
+                    errors.push("La somme des valeurs des stratégies viewers doit être inférieure ou égale au nombre de clients à lancer");
+                }
+            }
+
+            // idem avec les plateformes
+            var platformStrategies = document.getElementsByName("platformStrategy[]");
+            if (platformStrategies.length > 0) {
+                somme = 0;
+                for (var i = 0; i < platformStrategies.length; i++) {
+                    somme += parseInt(platformStrategies[i].value);
+                }
+
+                if (somme >= m) {
+                    errors.push("La somme des valeurs des stratégies plateformes doit être égale au nombre de plateformes à lancer");
+                }
+            }
+           
+
+            // Affichez les erreurs s'il y en a
+            if (errors.length > 0) {
+                var errorDiv = document.getElementById("errors");
+                errorDiv.innerHTML = ""; // vider si nécessaire
+
+                for (var i = 0; i < errors.length; i++) {
+                    var errorAlert = document.createElement("div");
+                    errorAlert.className = "alert alert-danger alert-dismissible fade show";
+                    errorAlert.innerHTML = errors[i];
+
+                    btn = document.createElement("button")
+                    errorAlert.append(btn)
+                    btn.outerHTML = '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>'
+
+                    errorDiv.appendChild(errorAlert);
+                }
+
+                return false;
+            }
+
+            console.log("ok")
+        }
+    </script>
+
+</head>
+
+<body>
+    <nav class="navbar bg-dark bg-purple mb-5">
+        <a class="navbar-brand ms-3" href="/">
+            <i class="bi bi-code-slash me-2"></i>
+            Démonstration IA04
+        </a>
+    </nav>
+
+    <div class="container">
+
+
+        <!-- Validation côté back - Retour d'erreur -->
+        {{ if .Error }}
+        <div class="alert alert-danger">{{ .Error }}</div>
+        {{ end }}
+
+        <div id="errors"></div>
+
+
+        <h1 class="mb-4">Paramétrage</h1>
+
+
+        <!-- Formulaire permettant de spécifier les informations relatives à la démonstration -->
+        <form action="/result" method="post" onsubmit="return validation()">
+
+            <div class="mb-3">
+                <label for="n" class="form-text">Nombre de viewers</label>
+                <div class="input-group">
+                    <span class="input-group-text bg-purple"> <i class="bi bi-person-fill"></i> </span>
+                    <input type="number" class="form-control" id="n" name="n" placeholder="Entrer un nombre" value="100"
+                        required>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="m" class="form-text">Nombre de plateformes</label>
+
+                <div class="input-group">
+                    <span class="input-group-text bg-purple"> <i class="bi bi-film"></i> </span>
+                    <input type="number" class="form-control" id="m" name="m" placeholder="Entrer un nombre" value="5"
+                        required>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="t" class="form-text">Période de temps (en mois)</label>
+
+                <div class="input-group">
+                    <span class="input-group-text bg-purple"> <i class="bi bi-clock-fill"></i> </span>
+                    <input type="number" class="form-control" id="t" name="t" placeholder="Entrer un nombre" value="1"
+                        required>
+                </div>
+            </div>
+
+
+            <!-- Spécification des quotas souhaités pour chaque stratégie clients -->
+            {{ if len .ViewerStrategies }}
+
+                <h5 class="mt-4 mb-3"><i class="bi bi-person-fill me-2"></i>Stratégies Viewer</h5>
+                {{ range $i, $strat := .ViewerStrategies }}
+                <label class="form-text" for="viewerStrategy{{ $i }}">Quota pour la stratégie <b class="beige">Viewer</b> :
+                    {{ $strat }}</label>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text bg-purple" id="n"><i class="bi bi-percent"></i></span>
+                    {{ if eq $i 0 }}
+                    <input type="number" class="form-control" id="viewerStrategy{{ $i }}" name="viewerStrategy[]" 
+                        value="100" required>
+                    {{ else }}
+                    <input type="number" class="form-control" id="viewerStrategy{{ $i }}" name="viewerStrategy[]" 
+                        value="0" required>
+                    {{ end }}
+                </div>
+                {{ end }}
+            {{ end }}
+
+            <!-- Spécification des quotas souhaités pour chaque stratégie serveurs -->
+            {{ if len .PlatformStrategies }}
+
+                <h5 class="mt-4 mb-3"><i class="bi bi-film me-2"></i>Stratégies Plateforms</h5>
+                {{ range $i, $strat := .PlatformStrategies }}
+                <label class="form-text" for="platformStrategy{{ $i }}">Quota pour la stratégie <b class="green">Plateform</b> : {{ $strat }}</label>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text bg-purple" id="n"><i class="bi bi-percent"></i></span>
+                    {{ if eq $i 0 }}
+                    <input type="number" class="form-control" id="platformStrategy{{ $i }}" name="platformStrategy[]"
+                        value="5" required>
+                    {{ else }}
+                    <input type="number" class="form-control" id="platformStrategy{{ $i }}" name="platformStrategy[]"  value="0" required>
+                    {{ end }}
+                </div>
+                {{ end }}
+            {{end}}
+
+
+            <button type="submit" class="btn btn-primary bg-orange mt-4 col-12">Valider</button>
+        </form>
+    </div>
+</body>
+
+</html>

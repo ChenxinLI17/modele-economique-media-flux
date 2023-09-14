@@ -1,0 +1,223 @@
+<!-- result.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Résultats</title>
+
+    <!-- BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <!-- GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CUSTOM-->
+    <style>
+        * {
+            font-family: 'Poppins'
+        }
+
+        .bg-purple {
+            background-color: #241623 !important
+        }
+
+        .bg-orange {
+            background-color: #D56F3E !important
+        }
+
+        .bg-blue {
+            background-color: #3C787E !important
+        }
+
+        .bg-beige {
+            background-color: #D0CD94 !important
+        }
+
+        .bg-green {
+            background-color: #C7EF00 !important
+        }
+
+        .bg-purple>*,
+        .bg-blue>*,
+        .bg-orange>* {
+            color: white !important
+        }
+
+
+
+        .purple {
+            color: #241623 !important
+        }
+
+        .orange {
+            color: #D56F3E !important
+        }
+
+        .blue {
+            color: #3C787E !important
+        }
+
+        .beige {
+            color: #D0CD94 !important
+        }
+
+        .green {
+            color: #C7EF00 !important
+        }
+
+        button.bg-purple,
+        button.bg-orange,
+        button.bg-blue,
+        button.bg-beige,
+        button.bg-green {
+            border: none
+        }
+
+        button.bg-purple:hover {
+            background-color: #4a2e48 !important
+        }
+
+        button.bg-orange:hover {
+            background-color: #e27643 !important
+        }
+
+        button.bg-blue:hover {
+            background-color: #468d93 !important
+        }
+
+        button.bg-beige:hover {
+            background-color: #e1dea0 !important
+        }
+
+        button.bg-green:hover {
+            background-color: #d4ff00 !important
+        }
+
+        button.bg-purple:active {
+            background-color: #130b12 !important
+        }
+
+        button.bg-orange:active {
+            background-color: #a6542e !important
+        }
+
+        button.bg-blue:active {
+            background-color: #2e5b5f !important
+        }
+
+        button.bg-beige:active {
+            background-color: #9f9d71 !important
+        }
+
+        button.bg-green:active {
+            background-color: #a4c500 !important
+        }
+
+        b {
+            font-weight: 700;
+        }
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #a6542e;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a6542e;
+        }
+    </style>
+
+    <script>
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    </script>
+
+</head>
+
+<body>
+    <nav class="navbar bg-dark bg-purple mb-5">
+        <a class="navbar-brand ms-3" href="/">
+            <i class="bi bi-code-slash me-2"></i>
+            Démonstration IA04
+        </a>
+    </nav>
+
+    <div class="container">
+        <h1 class="mb-4">Résultats</h1>
+
+        <!-- Visualisation des plateformes -->
+        <div class="row">
+            <div class="col-12">
+
+                {{range .Plateforms}}
+                <div class="card mb-4">
+                    <div class="card-header bg-blue">
+                        <h5 class="card-title"><b>Compte-Rendu</b></h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{.Name}}</h6>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-5">
+                                <p><b>Budget final :</b> {{ .Budget }} €</p>
+                                <p><b>Stratégie employée : </b> {{ .Strategy }}</p>
+
+                                <div>
+                                    {{  $subs := .Subscribers }}
+                                    <ul class="list-group list-group-numbered">
+                                        {{ range .Subscriptions }}
+                                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                                            <div class="ms-2 me-auto">
+                                                <div class="fw-bold">{{.Name}}</div>
+                                                Price : {{.Price}} €<br>
+                                                Formats : {{range .Formats}} {{.}} {{end}}
+                                                <br><b>Subscribers</b><br>
+                                                {{ range (index $subs .Name)}}
+                                                    - {{ .Name }} (stratégie : {{ .Strategy }})<br>
+                                                {{ end }}
+                                            </div>
+                                        </li>
+                                        {{end}}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <b>Catalogue</b>
+                                <ul class="list-group list-group-flush overflow-y-scroll" style="height:400px">
+                                    {{ range .Catalog.Videos }}
+                                    <li class="list-group-item">{{ .Title }} ({{ .Duration }} min) - <i>Thèmes : {{ range .Themes }} {{.}} {{ end }}</i></li>
+                                    {{ end }}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{end}}
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

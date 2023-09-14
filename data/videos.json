@@ -1,0 +1,355 @@
+{
+    "films": [
+        {
+            "titre": "L'odyssée de l'espace",
+            "themes": [
+                "Science-fiction",
+                "Aventure"
+            ]
+        },
+        {
+            "titre": "Le retour des morts-vivants",
+            "themes": [
+                "Horreur",
+                "Fantastique"
+            ]
+        },
+        {
+            "titre": "La guerre des mondes",
+            "themes": [
+                "Science-fiction",
+                "Guerre"
+            ]
+        },
+        {
+            "titre": "Le roi lion",
+            "themes": [
+                "Fantaisie",
+                "Aventure"
+            ]
+        },
+        {
+            "titre": "Les aventures de Sherlock Holmes",
+            "themes": [
+                "Mystère",
+                "Aventure"
+            ]
+        },
+        {
+            "titre": "Le secret de la pyramide",
+            "themes": [
+                "Aventure",
+                "Historique"
+            ]
+        },
+        {
+            "titre": "La ville des ténèbres",
+            "themes": [
+                "Thriller",
+                "Crime"
+            ]
+        },
+        {
+            "titre": "Les ailes de l'enfer",
+            "themes": [
+                "Action",
+                "Guerre"
+            ]
+        },
+        {
+            "titre": "L'amour à tout prix",
+            "themes": [
+                "Romance",
+                "Drame"
+            ]
+        },
+        {
+            "titre": "La vie est belle",
+            "themes": [
+                "Comédie",
+                "Slice of life"
+            ]
+        },
+        {
+            "titre": "Le monde perdu",
+            "themes": [
+                "Aventure",
+                "Science-fiction"
+            ]
+        },
+        {
+            "titre": "La maison hantée",
+            "themes": [
+                "Horreur",
+                "Mystère"
+            ]
+        },
+        {
+            "titre": "L'homme qui valait 35 milliards",
+            "themes": [
+                "Thriller",
+                "Espionnage"
+            ]
+        },
+        {
+            "titre": "La guerre froide",
+            "themes": [
+                "Historique",
+                "Politique"
+            ]
+        },
+        {
+            "titre": "Le géant de fer",
+            "themes": [
+                "Aventure",
+                "Action"
+            ]
+        },
+        {
+            "titre": "Les champions du monde",
+            "themes": [
+                "Sport",
+                "Comédie"
+            ]
+        },
+        {
+            "titre": "La nuit des musiciens",
+            "themes": [
+                "Musique",
+                "Comédie"
+            ]
+        },
+        {
+            "titre": "La famille heureuse",
+            "themes": [
+                "Comédie",
+                "Famille"
+            ]
+        },
+        {
+            "titre": "Le mystère de la chambre jaune",
+            "themes": [
+                "Mystère",
+                "Thriller"
+            ]
+        },
+        {
+            "titre": "Le monde de demain",
+            "themes": [
+                "Science-fiction",
+                "Technologie"
+            ]
+        },
+        {
+            "titre": "Les aventuriers de l'arche perdue",
+            "themes": [
+                "Aventure",
+                "Historique"
+            ]
+        },
+        {
+            "titre": "Les 7 samouraïs",
+            "themes": [
+                "Action",
+                "Guerre",
+                "Historique"
+            ]
+        },
+        {
+            "titre": "La ligue des justiciers",
+            "themes": [
+                "Action",
+                "Super-héros"
+            ]
+        },
+        {
+            "titre": "L'école de la vie",
+            "themes": [
+                "Comédie",
+                "Éducation"
+            ]
+        },
+        {
+            "titre": "Docteur House",
+            "themes": [
+                "Drame",
+                "Médecine"
+            ]
+        },
+        {
+            "titre": "La quatrième dimension",
+            "themes": [
+                "Science-fiction",
+                "Mystère"
+            ]
+        },
+        {
+            "titre": "Le musée des merveilles",
+            "themes": [
+                "Aventure",
+                "Art"
+            ]
+        },
+        {
+            "titre": "La nature sauvage",
+            "themes": [
+                "Aventure",
+                "Nature"
+            ]
+        },
+        {
+            "titre": "Les enjeux de notre temps",
+            "themes": [
+                "Documentaire",
+                "Société"
+            ]
+        },
+        {
+            "titre": "Les chemins de la foi",
+            "themes": [
+                "Documentaire",
+                "Religion"
+            ]
+        },
+        {
+            "titre": "Le trésor de la jungle",
+            "themes": [
+                "Aventure"
+            ]
+        },
+        {
+            "titre": "La guerre des étoiles",
+            "themes": [
+                "Science-fiction",
+                "Action",
+                "Aventure"
+            ]
+        },
+        {
+            "titre": "Le parrain",
+            "themes": [
+                "Drame",
+                "Crime"
+            ]
+        },
+        {
+            "titre": "Le seigneur des anneaux",
+            "themes": [
+                "Aventure",
+                "Fantaisie",
+                "Action"
+            ]
+        },
+        {
+            "titre": "La vie est belle",
+            "themes": [
+                "Comédie"
+            ]
+        },
+        {
+            "titre": "Le bouddha d'or",
+            "themes": [
+                "Aventure",
+                "Thriller"
+            ]
+        },
+        {
+            "titre": "La momie",
+            "themes": [
+                "Aventure",
+                "Horreur"
+            ]
+        },
+        {
+            "titre": "Le voyage de Chihiro",
+            "themes": [
+                "Aventure",
+                "Fantaisie"
+            ]
+        },
+        {
+            "titre": "Le grand bleu",
+            "themes": [
+                "Aventure",
+                "Drame"
+            ]
+        },
+        {
+            "titre": "La légende de Tarzan",
+            "themes": [
+                "Aventure",
+                "Action"
+            ]
+        }
+    ],
+    "documentaires": [
+        {
+            "titre": "Les grands espaces sauvages",
+            "themes": [
+                "Nature"
+            ]
+        },
+        {
+            "titre": "La guerre froide: une histoire inachevée",
+            "themes": [
+                "Historique",
+                "Politique"
+            ]
+        },
+        {
+            "titre": "Le monde de l'intelligence artificielle",
+            "themes": [
+                "Technologie"
+            ]
+        },
+        {
+            "titre": "Les grands mystères de l'univers",
+            "themes": [
+                "Astronomie",
+                "Science"
+            ]
+        },
+        {
+            "titre": "L'histoire de l'humanité",
+            "themes": [
+                "Historique",
+                "Anthropologie"
+            ]
+        },
+        {
+            "titre": "Les grandes découvertes archéologiques",
+            "themes": [
+                "Historique",
+                "Archéologie"
+            ]
+        },
+        {
+            "titre": "La vie sous-marine",
+            "themes": [
+                "Nature",
+                "Biologie"
+            ]
+        },
+        {
+            "titre": "Les grandes catastrophes naturelles",
+            "themes": [
+                "Nature",
+                "Historique"
+            ]
+        },
+        {
+            "titre": "Les secrets de la pyramide",
+            "themes": [
+                "Historique",
+                "Architecture"
+            ]
+        },
+        {
+            "titre": "Le monde animal",
+            "themes": [
+                "Nature",
+                "Biologie"
+            ]
+        }
+    ]
+}
